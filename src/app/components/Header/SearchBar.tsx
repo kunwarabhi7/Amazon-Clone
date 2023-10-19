@@ -2,7 +2,7 @@ import { BiSolidDownArrow } from "react-icons/bi";
 import { BsSearch } from "react-icons/bs";
 const SearchBar = () => {
   return (
-    <div className="flex bg-gray-300">
+    <div className="md:flex bg-gray-300 hidden">
       <label className="flex items-center text-black/60">
         All <BiSolidDownArrow />
       </label>
