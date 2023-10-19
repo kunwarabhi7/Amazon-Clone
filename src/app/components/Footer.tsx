@@ -11,6 +11,10 @@ const Footer = () => {
         <Image src={logo} alt="logo" width={70} height={70} />
         <Image src={flag} alt="logo" width={40} height={40} />
       </div>
+      <div className="flex flex-col items-center text-white mb-4">
+        <p>Conditions of Use & Sale Privacy Notice Interest-Based Ads</p>
+        <p>© 1996-2023, Amazon.com, Inc. or its affiliates</p>
+      </div>
     </div>
   );
 };
