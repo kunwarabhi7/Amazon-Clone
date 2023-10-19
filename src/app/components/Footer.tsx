@@ -12,7 +12,19 @@ const Footer = () => {
         <Image src={flag} alt="logo" width={40} height={40} />
       </div>
       <div className="flex flex-col items-center text-white mb-4">
-        <p>Conditions of Use & Sale Privacy Notice Interest-Based Ads</p>
+        <p>
+          <span className="hover:underline cursor-pointer">
+            Conditions of Use & Sale
+          </span>
+          <span className="hover:underline cursor-pointer">
+            {" "}
+            Privacy Notice
+          </span>
+          <span className="hover:underline cursor-pointer">
+            {" "}
+            Interest-Based Ads{" "}
+          </span>
+        </p>
         <p>© 1996-2023, Amazon.com, Inc. or its affiliates</p>
       </div>
     </div>
