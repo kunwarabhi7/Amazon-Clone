@@ -9,8 +9,14 @@ import Cart from "./Cart";
 
 const Header = () => {
   return (
-    <div className="flex items-center justify-between m-4">
-      <Image src={logo} alt="logo" width={100} height={100} />
+    <div className="flex items-center justify-between m-4 sticky top-0 z-50">
+      <Image
+        src={logo}
+        alt="logo"
+        width={100}
+        height={100}
+        className="hover:border cursor-pointer p-1"
+      />
 
       <Address />
 

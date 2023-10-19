@@ -1,7 +1,7 @@
 import { HiOutlineLocationMarker } from "react-icons/hi";
 const Address = () => {
   return (
-    <div>
+    <div className="hover:border cursor-pointer">
       <p>Hello</p>
       <div className="flex items-center">
         <HiOutlineLocationMarker />
