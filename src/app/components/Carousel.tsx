@@ -20,7 +20,7 @@ const CarouselComponents = () => {
         infiniteLoop={true}
         showStatus={false}
         showIndicators={false}
-        showArrows={false}
+        // showArrows={false}
       >
         <div>
           <Image priority src={image1} alt="Carousel" />
@@ -44,12 +44,12 @@ const CarouselComponents = () => {
           <Image src={image7} alt="Carousel" />
         </div>
       </Carousel>
-      <div className="absolute top-40 right-0">
+      {/* <div className="absolute top-40 right-0">
         <AiOutlineRight size={70} />
       </div>
       <div className="absolute top-40 left-0">
         <AiOutlineLeft size={70} />
-      </div>
+      </div> */}
       <div className="w-full h-40 bg-gradient-to-t from-gray-200 to-transparent absolute bottom-0 z-20" />
     </div>
   );
