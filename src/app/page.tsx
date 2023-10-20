@@ -1,5 +1,11 @@
-import Image from "next/image";
+import CarouselComponents from "./components/Carousel";
+import Products from "./components/Header/Products";
 
 export default function Home() {
-  return <div>app</div>;
+  return (
+    <div>
+      <CarouselComponents />
+      <Products />
+    </div>
+  );
 }
