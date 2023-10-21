@@ -5,7 +5,7 @@ import flag from "../assets/india.png";
 
 const Footer = () => {
   return (
-    <div className="bg-[#232F3E] fixed bottom-0 left-0 right-0 z-50">
+    <div className="bg-[#232F3E] ">
       <BackToTopButton />
       <div className="flex items-center justify-center p-2 space-x-4 m-4 ">
         <Image src={logo} alt="logo" width={70} height={70} />
