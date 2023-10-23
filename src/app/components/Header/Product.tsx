@@ -43,7 +43,7 @@ const Product = ({ product }: any) => {
           <p className="line-through">${oldPrice}</p>
           <p className="font-bold">${price}</p>
         </div>
-        <p className="text-sm">{description}</p>
+        <p className="text-sm text-justify">{description}</p>
         <button className="bg-black text-white w-full rounded-full mx-2 mt-4 p-1">
           Add to Cart
         </button>
