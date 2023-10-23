@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { BiSolidCart } from "react-icons/bi";
 import { BsChatSquareHeartFill } from "react-icons/bs";
+import FormattedPrice from "../FormattedPrice";
 const Product = ({ product }: any) => {
   const {
     id,
@@ -13,10 +14,11 @@ const Product = ({ product }: any) => {
     image,
     brand,
   } = product;
+
   return (
     <div
       key={id}
-      className="bg-white rounded-lg shadow-lg w-full p-4 border border-x-gray-300 group  overflow-hidden"
+      className="bg-white rounded-lg shadow-lg w-full p-4 border border-x-gray-300 group mx-4 overflow-hidden"
     >
       <div className="relative w-full h-[260px] overflow-hidden">
         <Image
@@ -34,6 +36,11 @@ const Product = ({ product }: any) => {
             <BsChatSquareHeartFill size={30} />
           </span>
         </div>
+        {isNew && (
+          <p className=" absolute top-0 right-1 text-cyan-600 font-medium text-xs  animate-bounce">
+            !save <FormattedPrice amount={oldPrice - price} />
+          </p>
+        )}
       </div>
       <hr />
       <div className="p-2 px-4">
