@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "./components/Header/Header";
 import MiniHeader from "./components/Header/MiniHeader";
 import Footer from "./components/Footer";
+import Provider from "./components/Provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,10 +21,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-gray-300">
-        <Header />
-        <MiniHeader />
-        {children}
-        <Footer />
+        <Provider>
+          <Header />
+          <MiniHeader />
+          {children}
+          <Footer />
+        </Provider>
       </body>
     </html>
   );

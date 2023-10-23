@@ -18,7 +18,7 @@ const Product = ({ product }: any) => {
   return (
     <div
       key={id}
-      className="bg-white rounded-lg shadow-lg w-full p-4 border border-x-gray-300 group mx-4 overflow-hidden"
+      className="bg-white rounded-lg shadow-lg w-full p-4 border border-x-gray-300 group overflow-hidden"
     >
       <div className="relative w-full h-[260px] overflow-hidden">
         <Image
