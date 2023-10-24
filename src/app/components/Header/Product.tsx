@@ -1,8 +1,17 @@
+"use client";
 import Image from "next/image";
 import { BiSolidCart } from "react-icons/bi";
 import { BsChatSquareHeartFill } from "react-icons/bs";
 import FormattedPrice from "../FormattedPrice";
+import { useDispatch } from "react-redux";
+import {
+  addItemToCart,
+  removeItemFromCart,
+  increaseQuantity,
+  decreaseQuantity,
+} from "@/app/store/CartSlice";
 const Product = ({ product }: any) => {
+  const dispatch = useDispatch();
   const {
     id,
     title,
@@ -14,6 +23,19 @@ const Product = ({ product }: any) => {
     image,
     brand,
   } = product;
+
+  const handleAdd = () => {
+    dispatch(addItemToCart(product));
+  };
+  const handleRemove = () => {
+    dispatch(removeItemFromCart(id));
+  };
+  const handleIncrease = () => {
+    dispatch(increaseQuantity(id));
+  };
+  const handleDecrease = () => {
+    dispatch(decreaseQuantity(id));
+  };
 
   return (
     <div
@@ -28,7 +50,7 @@ const Product = ({ product }: any) => {
           height={300}
           className="w-full h-full object-cover scale-90 hover:scale-100  duration-300"
         />
-        <div className="absolute top-20 -right-20 flex flex-col  group-hover:left-[440px] md:group-hover:left-[300px] mdl:group-hover:left-[250px] xl:group-hover:left-[250px] duration-300">
+        <div className="absolute top-20 -right-20 flex flex-col  group-hover:left-[440px] :group-hover:left-[440px]  md:group-hover:left-[280px] mdl:group-hover:left-[240px] lgl:group-hover:left-[200px] xl:group-hover:left-[340px] duration-300">
           <span className="text-cyan-300 cursor-pointer">
             <BiSolidCart size={30} />
           </span>
@@ -45,13 +67,16 @@ const Product = ({ product }: any) => {
       <hr />
       <div className="px-4 py-3 flex flex-col gap-1 ">
         <p className="text-gray-600 tracking-wide">{category}</p>
-        <p className="my-2 text-xl font-bold">{title}</p>
+        <p className="my-2 text-xl font-bold ">{title}</p>
         <div className="flex items-center space-x-8">
           <p className="line-through">${oldPrice}</p>
           <p className="font-bold">${price}</p>
         </div>
         <p className="text-sm text-justify">{description.substring(0, 120)}</p>
-        <button className="bg-black h-10  text-white w-full rounded-full mx-2 mt-4 p-1">
+        <button
+          onClick={handleAdd}
+          className="bg-black h-10  text-white w-full rounded-full mx-2 mt-4 p-1"
+        >
           Add to Cart
         </button>
       </div>
