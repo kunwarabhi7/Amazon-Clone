@@ -25,7 +25,20 @@ const Product = ({ product }: any) => {
   } = product;
 
   const handleAdd = () => {
-    dispatch(addItemToCart(product));
+    dispatch(
+      addItemToCart({
+        id,
+        title,
+        isNew,
+        oldPrice,
+        price,
+        description,
+        category,
+        image,
+        brand,
+        quantity: 1,
+      })
+    );
   };
   const handleRemove = () => {
     dispatch(removeItemFromCart(id));

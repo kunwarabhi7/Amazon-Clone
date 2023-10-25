@@ -21,3 +21,10 @@ export interface StoreProduct {
   oldProce: number;
   quantity: number;
 }
+
+export interface NextState {
+  productData: StoreProduct[];
+  favoriteData: StoreProduct[];
+  allProducts: StoreProduct[];
+  userInfo: null | String;
+}
