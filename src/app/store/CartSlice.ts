@@ -23,7 +23,7 @@ export const cartSlice = createSlice({
         state.productData.push(action.payload);
       }
     },
-    removeItemFromCart() {},
+    removeItemFromCart(state, action) {},
     increaseQuantity() {},
     decreaseQuantity() {},
   },
