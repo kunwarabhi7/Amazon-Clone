@@ -1,5 +1,9 @@
+"use client";
 import { FaOpencart } from "react-icons/fa";
+import { useSelector } from "react-redux";
 const Cart = () => {
+  const { productData } = useSelector((state: any) => state.cart);
+  console.log(productData);
   return (
     <div className="relative hover:border cursor-pointer p-1 py-3">
       <div className=" flex items-center">
