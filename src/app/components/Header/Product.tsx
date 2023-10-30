@@ -36,7 +36,7 @@ const Product = ({ product }: any) => {
         category,
         image,
         brand,
-        quantity: 2,
+        quantity: 1,
       })
     );
   };
