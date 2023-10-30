@@ -7,7 +7,7 @@ export interface ProductProps {
   id: number;
   title: string;
   isNew: boolean;
-  oldProce: number;
+  oldPrice: number;
 }
 export interface StoreProduct {
   brand: string;
@@ -18,7 +18,7 @@ export interface StoreProduct {
   id: number;
   title: string;
   isNew: boolean;
-  oldProce: number;
+  oldPrice: number;
   quantity: number;
 }
 

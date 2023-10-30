@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type { PayloadAction } from "@reduxjs/toolkit";
 import { NextState, StoreProduct } from "../../../type";
 
 const initialState: NextState = {
@@ -18,7 +17,8 @@ export const cartSlice = createSlice({
         (item: StoreProduct) => item.id === action.payload.id
       );
       if (existingProduct) {
-        existingProduct.quantity += action.payload.quantity;
+        existingProduct.quantity =
+          existingProduct.quantity + action.payload.quantity;
       } else {
         state.productData.push(action.payload);
       }

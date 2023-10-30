@@ -9,7 +9,9 @@ import {
   removeItemFromCart,
   increaseQuantity,
   decreaseQuantity,
+  addToFavorite,
 } from "@/app/store/CartSlice";
+import { ProductProps } from "../../../../type";
 const Product = ({ product }: any) => {
   const dispatch = useDispatch();
   const {
@@ -22,24 +24,24 @@ const Product = ({ product }: any) => {
     category,
     image,
     brand,
-  } = product;
+  }: ProductProps = product;
 
-  const handleAdd = () => {
-    dispatch(
-      addItemToCart({
-        id,
-        title,
-        isNew,
-        oldPrice,
-        price,
-        description,
-        category,
-        image,
-        brand,
-        quantity: 1,
-      })
-    );
-  };
+  // const handleAdd = () => {
+  //   dispatch(
+  //     addItemToCart({
+  //       id,
+  //       title,
+  //       isNew,
+  //       oldPrice,
+  //       price,
+  //       description,
+  //       category,
+  //       image,
+  //       brand,
+  //       quantity: 1,
+  //     })
+  //   );
+  // };
   const handleRemove = () => {
     dispatch(removeItemFromCart(id));
   };
@@ -64,10 +66,46 @@ const Product = ({ product }: any) => {
           className="w-full h-full object-cover scale-90 hover:scale-100  duration-300"
         />
         <div className="absolute top-20 -right-20 flex flex-col  group-hover:left-[440px] :group-hover:left-[440px]  md:group-hover:left-[280px] mdl:group-hover:left-[240px] lgl:group-hover:left-[200px] xl:group-hover:left-[340px] duration-300">
-          <span className="text-cyan-300 cursor-pointer">
+          <span
+            className="text-cyan-300 cursor-pointer"
+            onClick={() =>
+              dispatch(
+                addItemToCart({
+                  id,
+                  brand,
+                  category,
+                  description,
+                  image,
+                  isNew,
+                  oldPrice,
+                  price,
+                  title,
+                  quantity: 1,
+                })
+              )
+            }
+          >
             <BiSolidCart size={30} />
           </span>
-          <span className="h-12 w-12 text-red-500 cursor-pointer">
+          <span
+            className="h-12 w-12 text-red-500 cursor-pointer"
+            onClick={() =>
+              dispatch(
+                addToFavorite({
+                  id,
+                  brand,
+                  category,
+                  description,
+                  image,
+                  isNew,
+                  oldPrice,
+                  price,
+                  title,
+                  quantity: 1,
+                })
+              )
+            }
+          >
             <BsChatSquareHeartFill size={30} />
           </span>
         </div>
@@ -87,7 +125,22 @@ const Product = ({ product }: any) => {
         </div>
         <p className="text-sm text-justify">{description.substring(0, 120)}</p>
         <button
-          onClick={handleAdd}
+          onClick={() =>
+            dispatch(
+              addItemToCart({
+                id: id,
+                brand: brand,
+                category: category,
+                description: description,
+                image: image,
+                isNew: isNew,
+                oldPrice: oldPrice,
+                price: price,
+                title: title,
+                quantity: 1,
+              })
+            )
+          }
           className="bg-black h-10  text-white w-full rounded-full mx-2 mt-4 p-1"
         >
           Add to Cart
