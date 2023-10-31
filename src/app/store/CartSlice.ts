@@ -14,7 +14,7 @@ export const cartSlice = createSlice({
   reducers: {
     addItemToCart(state, action) {
       const existingProduct = state.productData.find(
-        (item: StoreProduct) => item.id === action.payload.id
+        (item: StoreProduct) => item._id === action.payload._id
       );
       if (existingProduct) {
         existingProduct.quantity =
@@ -25,7 +25,7 @@ export const cartSlice = createSlice({
     },
     addToFavorite(state, action) {
       const existingProduct = state.favoriteData.find(
-        (item: StoreProduct) => item.id === action.payload.id
+        (item: StoreProduct) => item._id === action.payload._id
       );
       if (existingProduct) {
         existingProduct.quantity += action.payload.quantity;
@@ -35,21 +35,21 @@ export const cartSlice = createSlice({
     },
     removeItemFromCart(state, action) {
       state.productData.filter(
-        (item: StoreProduct) => item.id !== action.payload.id
+        (item: StoreProduct) => item._id !== action.payload._id
       );
     },
     increaseQuantity(state, action) {
       const existingProduct = state.productData.find((item: StoreProduct) => {
-        item.id === action.payload.id;
+        item._id === action.payload._id;
         existingProduct && existingProduct.quantity++;
       });
     },
     decreaseQuantity(state, action) {
       const existingProduct = state.productData.find((item: StoreProduct) => {
-        item.id === action.payload.id;
+        item._id === action.payload._id;
         if (existingProduct?.quantity === 1) {
           state.productData = state.productData.filter(
-            (item) => item.id !== action.payload.id
+            (item) => item._id !== action.payload._id
           );
         } else {
           existingProduct!.quantity--;

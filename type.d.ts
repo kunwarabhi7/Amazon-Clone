@@ -4,7 +4,7 @@ export interface ProductProps {
   category: string;
   description: string;
   price: number;
-  id: number;
+  _id: number;
   title: string;
   isNew: boolean;
   oldPrice: number;
@@ -15,7 +15,7 @@ export interface StoreProduct {
   category: string;
   description: string;
   price: number;
-  id: number;
+  _id: number;
   title: string;
   isNew: boolean;
   oldPrice: number;

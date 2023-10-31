@@ -15,7 +15,7 @@ import { ProductProps } from "../../../../type";
 const Product = ({ product }: any) => {
   const dispatch = useDispatch();
   const {
-    id,
+    _id,
     title,
     isNew,
     oldPrice,
@@ -25,7 +25,6 @@ const Product = ({ product }: any) => {
     image,
     brand,
   }: ProductProps = product;
-
   // const handleAdd = () => {
   //   dispatch(
   //     addItemToCart({
@@ -42,19 +41,10 @@ const Product = ({ product }: any) => {
   //     })
   //   );
   // };
-  const handleRemove = () => {
-    dispatch(removeItemFromCart(id));
-  };
-  const handleIncrease = () => {
-    dispatch(increaseQuantity(id));
-  };
-  const handleDecrease = () => {
-    dispatch(decreaseQuantity(id));
-  };
 
   return (
     <div
-      key={id}
+      key={_id}
       className="bg-white rounded-lg shadow-lg w-full p-4 border border-x-gray-300 group overflow-hidden"
     >
       <div className="relative w-full h-[260px] overflow-hidden">
@@ -71,7 +61,7 @@ const Product = ({ product }: any) => {
             onClick={() =>
               dispatch(
                 addItemToCart({
-                  id,
+                  _id,
                   brand,
                   category,
                   description,
@@ -92,7 +82,7 @@ const Product = ({ product }: any) => {
             onClick={() =>
               dispatch(
                 addToFavorite({
-                  id,
+                  _id,
                   brand,
                   category,
                   description,
@@ -128,7 +118,7 @@ const Product = ({ product }: any) => {
           onClick={() =>
             dispatch(
               addItemToCart({
-                id: id,
+                _id: _id,
                 brand: brand,
                 category: category,
                 description: description,

@@ -3,7 +3,6 @@ import { FaOpencart } from "react-icons/fa";
 import { useSelector } from "react-redux";
 const Cart = () => {
   const { productData } = useSelector((state: any) => state.cart);
-  console.log(productData);
   return (
     <div className="relative hover:border cursor-pointer p-1 py-3">
       <div className=" flex items-center">
@@ -13,7 +12,9 @@ const Cart = () => {
         <p>Cart</p>
       </div>
       <div>
-        <span className="absolute top-0 left-2 text-orange-500">4</span>
+        <span className="absolute top-0 left-2 text-orange-500">
+          {productData?.length | 0}
+        </span>
       </div>
     </div>
   );
