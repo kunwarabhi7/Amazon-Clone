@@ -6,17 +6,20 @@ import Languages from "./Languages";
 import SignIn from "./SignIn";
 import Returns from "./Returns";
 import Cart from "./Cart";
+import Link from "next/link";
 
 const Header = () => {
   return (
     <div className="flex items-center justify-between p-4  sticky top-0 z-50 bg-black text-white ">
-      <Image
-        src={logo}
-        alt="logo"
-        width={100}
-        height={100}
-        className="hover:border cursor-pointer p-1"
-      />
+      <Link href="/">
+        <Image
+          src={logo}
+          alt="logo"
+          width={100}
+          height={100}
+          className="hover:border cursor-pointer p-1"
+        />
+      </Link>
 
       <Address />
 
