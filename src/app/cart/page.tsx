@@ -2,9 +2,10 @@
 import { useSelector } from "react-redux";
 import EmptyCart from "../components/EmptyCart";
 import FullCart from "../components/FullCart";
+import { StateProps } from "../../../type";
 
 const Cart = () => {
-  const { productData } = useSelector((state: any) => state.cart);
+  const { productData } = useSelector((state: StateProps) => state.cart);
   if (productData.length === 0) {
     return <EmptyCart />;
   }

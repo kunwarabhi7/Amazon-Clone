@@ -28,3 +28,10 @@ export interface NextState {
   allProducts: StoreProduct[];
   userInfo: null | String;
 }
+
+export interface StateProps {
+  productData: [];
+  favoriteData: [];
+  userInfo: null | string;
+  cart: any;
+}

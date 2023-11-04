@@ -43,7 +43,7 @@ export const cartSlice = createSlice({
         item._id === action.payload._id;
       });
       if (existingProduct) {
-        existingProduct.quantity++;
+        existingProduct.quantity + 1;
       }
     },
     decreaseQuantity(state, action) {
@@ -56,7 +56,7 @@ export const cartSlice = createSlice({
             (item) => item._id !== action.payload._id
           );
         } else {
-          existingProduct.quantity--;
+          existingProduct.quantity - 1;
         }
       }
     },
