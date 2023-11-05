@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import EmptyCart from "../components/EmptyCart";
 import FullCart from "../components/FullCart";
 import { StateProps } from "../../../type";
+import ResetCart from "../components/ResetCart";
 
 const Cart = () => {
   const { productData } = useSelector((state: StateProps) => state.cart);
@@ -16,6 +17,7 @@ const Cart = () => {
       {productData.map((data: any) => (
         <FullCart key={data._id} data={data} />
       ))}
+      <ResetCart />
     </div>
   );
 };

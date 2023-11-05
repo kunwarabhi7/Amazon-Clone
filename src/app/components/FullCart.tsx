@@ -93,22 +93,10 @@ const FullCart = ({ data }: cartProduct) => {
           </button>
         </div>
         <button
-          onClick={() =>
-            removeItemFromCart({
-              _id,
-              brand,
-              category,
-              description,
-              image,
-              isNew,
-              oldPrice,
-              price,
-              title,
-            })
-          }
+          onClick={() => dispatch(removeItemFromCart(_id))}
           className="text-blue-400"
         >
-          Deletee
+          Delete
         </button>
       </div>
     </div>
