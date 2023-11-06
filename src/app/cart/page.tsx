@@ -13,8 +13,10 @@ const Cart = () => {
   }
   return (
     <div>
-      <p>Shopping Cart</p>
-      <hr />
+      <p className="text-3xl font-semibold m-8 mb-0  bg-white p-2 md:mr-[334px] xl:mr-[480px]">
+        Shopping Cart
+      </p>
+      <hr className="xl:w-[480px] w-80" />
       <div className="flex ">
         <div className="flex-grow">
           {productData.map((data: any) => (

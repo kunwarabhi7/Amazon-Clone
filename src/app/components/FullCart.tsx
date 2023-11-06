@@ -39,7 +39,10 @@ const FullCart = ({ data }: cartProduct) => {
     quantity,
   } = data;
   return (
-    <div key={_id} className="bg-white m-8 flex items-center justify-center">
+    <div
+      key={_id}
+      className="bg-white m-8 mt-0 flex items-center justify-center"
+    >
       <div>
         <Image src={image} alt={title} height={200} width={200} />
       </div>
